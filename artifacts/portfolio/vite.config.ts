@@ -7,6 +7,10 @@ const isReplit = !!process.env.REPL_ID;
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 const basePath = process.env.BASE_PATH ?? "/";
 
+const outDir = isReplit
+  ? path.resolve(import.meta.dirname, "dist")
+  : path.resolve(import.meta.dirname, "../../dist");
+
 export default defineConfig({
   base: basePath,
   plugins: [
@@ -34,7 +38,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname),
   build: {
-    outDir: "dist",
+    outDir,
     emptyOutDir: true,
   },
   server: {
