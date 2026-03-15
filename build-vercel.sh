@@ -8,7 +8,7 @@ echo "=== Building portfolio ==="
 BASE_PATH=/ pnpm --filter @workspace/portfolio run build
 
 echo "=== Locating build output ==="
-OUTPUT_DIR="vercel-output"
+OUTPUT_DIR="dist-deploy"
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
 
@@ -28,6 +28,9 @@ else
   echo "ERROR: Could not find build output!"
   exit 1
 fi
+
+# Required for SPA routing (React Router / Wouter) on Cloudflare Pages
+echo "/* /index.html 200" > "$OUTPUT_DIR/_redirects"
 
 echo "=== Build complete. Output in $OUTPUT_DIR ==="
 ls "$OUTPUT_DIR"

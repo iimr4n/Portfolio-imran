@@ -1,5 +1,5 @@
 {
   "buildCommand": "bash build-vercel.sh",
-  "outputDirectory": "vercel-output",
+  "outputDirectory": "dist-deploy",
   "framework": null
 }
