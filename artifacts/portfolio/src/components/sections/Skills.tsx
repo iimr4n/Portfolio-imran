@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const skillsData = [
   {
@@ -24,51 +23,43 @@ const skillsData = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 export function Skills() {
   return (
-    <section id="skills" className="py-24 md:py-32 bg-secondary/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading 
-          title="Skills" 
-          subtitle="My technical toolkit and areas of expertise."
-        />
-
+    <section id="skills" className="py-32 bg-background">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
         >
+          <h2 className="text-xs font-semibold tracking-widest uppercase text-primary mb-4">
+            Expertise
+          </h2>
+          <h3 className="text-4xl font-semibold tracking-tight text-foreground">
+            What I Know.
+          </h3>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillsData.map((category, idx) => (
             <motion.div
               key={idx}
-              variants={itemVariants}
-              className="bg-card border border-border/60 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="bg-card border border-border rounded-2xl p-8 hover:border-foreground/20 hover:shadow-sm transition-all"
             >
-              <h3 className="text-xl font-display font-semibold mb-6 group-hover:text-primary transition-colors">
+              <h4 className="text-xs font-semibold tracking-widest uppercase text-primary mb-4">
                 {category.category}
-              </h3>
-              <div className="flex flex-wrap gap-2 md:gap-3">
+              </h4>
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, sIdx) => (
                   <span
                     key={sIdx}
-                    className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                    className="bg-secondary text-secondary-foreground text-sm px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
                   >
                     {skill}
                   </span>
@@ -76,7 +67,7 @@ export function Skills() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

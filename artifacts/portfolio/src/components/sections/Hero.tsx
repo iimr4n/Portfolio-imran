@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 export function Hero() {
   const scrollToContact = () => {
@@ -12,80 +11,86 @@ export function Hero() {
   };
 
   return (
-    <section id="top" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-mesh">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="inline-block px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-8 border border-border/50 shadow-sm"
-          >
-            👋 Hello, World!
-          </motion.div>
+    <section id="top" className="relative min-h-screen flex items-center justify-center text-center pt-20 bg-background">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-transparent text-sm mb-8"
+        >
+          <span className="w-2 h-2 rounded-full bg-green-500"></span>
+          <span className="text-muted-foreground">Available for opportunities</span>
+        </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-5xl sm:text-7xl lg:text-8xl font-display font-extrabold tracking-tight leading-[1.1] mb-6"
-          >
-            AHAMMAD IMRAN A
-          </motion.h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-foreground mb-4 -ml-1"
+          style={{ letterSpacing: "-0.02em" }}
+        >
+          Ahammad Imran
+        </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-8"
-          >
-            <h2 className="text-xl sm:text-2xl font-semibold text-primary">
-              Software Engineer
-            </h2>
-            <span className="hidden sm:block text-muted-foreground">•</span>
-            <h2 className="text-xl sm:text-2xl font-medium text-muted-foreground">
-              BTech AI & Data Science Student
-            </h2>
-          </motion.div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="text-xl text-muted-foreground font-light mb-2"
+        >
+          Software Engineer · AI & Data Science
+        </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed"
-          >
-            "Passionate about building intelligent systems and modern software solutions."
-          </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          className="text-sm text-muted-foreground mb-8"
+        >
+          Kerala, India · MEA Engineering College
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row items-center gap-4"
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          className="italic text-lg text-muted-foreground max-w-md mx-auto mb-10"
+        >
+          "Passionate about building intelligent systems and modern software solutions."
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="https://www.linkedin.com/in/7imran"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto bg-primary text-white rounded-full px-7 py-3 text-sm font-medium hover:bg-primary/90 transition-colors"
           >
-            <Button
-              size="lg"
-              className="w-full sm:w-auto gap-2 group"
-              onClick={() => window.open("https://www.linkedin.com/in/7imran", "_blank")}
-            >
-              Connect on LinkedIn
-              <ExternalLink size={18} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto gap-2 group"
-              onClick={scrollToContact}
-            >
-              Contact Me
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </motion.div>
-        </div>
+            Connect on LinkedIn
+          </a>
+          <button
+            onClick={scrollToContact}
+            className="w-full sm:w-auto bg-transparent border border-foreground/20 rounded-full px-7 py-3 text-sm text-foreground hover:bg-foreground/5 transition-colors"
+          >
+            Contact Me
+          </button>
+        </motion.div>
       </div>
-      
-      {/* Decorative gradient orb */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
+      >
+        <ChevronDown className="text-muted-foreground" size={24} />
+      </motion.div>
     </section>
   );
 }

@@ -1,47 +1,52 @@
 import { motion } from "framer-motion";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { GraduationCap, MapPin, Building2 } from "lucide-react";
 
 export function Education() {
   return (
-    <section id="education" className="py-24 md:py-32 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading title="Education" />
+    <section id="education" className="py-32 bg-muted/50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <h2 className="text-xs font-semibold tracking-widest uppercase text-primary mb-4">
+            Education
+          </h2>
+          <h3 className="text-4xl font-semibold tracking-tight text-foreground">
+            Academic Background.
+          </h3>
+        </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="relative max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-card border border-border rounded-2xl p-8 md:p-12"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-10 rounded-3xl blur-xl" />
-          
-          <div className="relative bg-card border border-border rounded-3xl p-8 md:p-12 overflow-hidden shadow-lg shadow-black/5 group">
-            {/* Decorative background circle */}
-            <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500" />
+          <div className="flex flex-col gap-6">
+            <span className="text-xs text-muted-foreground">2022 — Present</span>
             
-            <div className="flex flex-col md:flex-row md:items-start gap-8 relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
-                <GraduationCap size={32} />
-              </div>
-              
-              <div>
-                <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-                  BTech – Artificial Intelligence & Data Science
-                </h3>
-                
-                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Building2 size={18} className="text-primary" />
-                    <span className="font-medium text-lg">MEA Engineering College</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin size={18} className="text-primary" />
-                    <span className="font-medium text-lg">Kerala, India</span>
-                  </div>
-                </div>
-              </div>
+            <div>
+              <h4 className="text-2xl font-semibold text-foreground mb-2">
+                Artificial Intelligence & Data Science
+              </h4>
+              <p className="text-lg text-muted-foreground">
+                MEA Engineering College · Kerala, India
+              </p>
+            </div>
+            
+            <hr className="border-border w-full" />
+            
+            <div className="flex gap-3">
+              <span className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-sm">
+                B.Tech
+              </span>
+              <span className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-sm">
+                AI & Data Science
+              </span>
             </div>
           </div>
         </motion.div>

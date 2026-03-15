@@ -1,26 +1,44 @@
 import { motion } from "framer-motion";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading title="About Me" />
-        
+    <section id="about" className="py-32 bg-muted/50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-card rounded-3xl p-8 md:p-12 border border-border shadow-xl shadow-black/5"
         >
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl md:text-2xl leading-relaxed text-foreground font-medium">
-              <span className="text-primary font-bold">Ahammad Imran</span> is a BTech student specializing in Artificial Intelligence and Data Science at MEA Engineering College, Kerala.
+          <h2 className="text-xs font-semibold tracking-widest uppercase text-primary mb-4">
+            About
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground mb-8 max-w-lg">
+            Building the Future,<br />One Line at a Time.
+          </h3>
+          
+          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-16 max-w-3xl">
+            <p>
+              I am a BTech student specializing in Artificial Intelligence and Data Science at MEA Engineering College, Kerala.
             </p>
-            <p className="mt-6 text-lg md:text-xl leading-relaxed text-muted-foreground">
-              He is passionate about software development, AI technologies, and building intelligent systems. He enjoys learning modern technologies and creating impactful software solutions that solve real-world problems.
+            <p>
+              Passionate about software development, AI technologies, and building intelligent systems. I enjoy learning modern technologies and creating impactful software solutions that solve real-world problems.
             </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-border pt-8">
+            <div className="flex flex-col">
+              <span className="text-3xl font-bold text-foreground">2+</span>
+              <span className="text-sm text-muted-foreground mt-1">Years of Coding</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-3xl font-bold text-foreground">15+</span>
+              <span className="text-sm text-muted-foreground mt-1">Technologies Mastered</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-3xl font-bold text-foreground">∞</span>
+              <span className="text-sm text-muted-foreground mt-1">Problems Solved</span>
+            </div>
           </div>
         </motion.div>
       </div>

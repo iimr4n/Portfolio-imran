@@ -1,60 +1,40 @@
 import { motion } from "framer-motion";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Phone, MessageSquare } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading title="Get In Touch" />
+    <section id="contact" className="py-32 bg-background">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-xs font-semibold tracking-widest uppercase text-primary mb-4">
+            Contact
+          </h2>
+          <h3 className="text-5xl md:text-6xl font-semibold tracking-tight text-foreground mb-6">
+            Let's Talk.
+          </h3>
+          <p className="text-xl text-muted-foreground max-w-lg mx-auto mb-12">
+            Open to opportunities, collaborations, and tech discussions.
+          </p>
 
-        <div className="max-w-3xl mx-auto bg-gradient-to-br from-primary to-accent p-[1px] rounded-[2.5rem] shadow-2xl shadow-primary/10">
-          <div className="bg-card rounded-[2.4rem] p-8 md:p-16 text-center">
-            <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, type: "spring" }}
-              className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8 text-primary"
+          <div className="flex flex-col items-center gap-6">
+            <a
+              href="tel:9061098676"
+              className="text-2xl font-medium text-foreground hover:underline decoration-1 underline-offset-4 transition-all"
             >
-              <MessageSquare size={36} />
-            </motion.div>
+              9061098676
+            </a>
             
-            <motion.h3 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-2xl md:text-4xl font-display font-bold mb-4"
-            >
-              Open to opportunities, collaborations, and tech discussions.
-            </motion.h3>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-muted-foreground mb-10"
-            >
-              Whether you have a question or just want to say hi, my inbox is always open.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <a
-                href="tel:9061098676"
-                className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-5 rounded-full font-bold text-xl md:text-2xl shadow-lg hover:shadow-xl hover:scale-105 hover:bg-primary/90 transition-all duration-300"
-              >
-                <Phone size={28} />
-                9061098676
-              </a>
-            </motion.div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <MapPin size={18} />
+              <span>Based in Kerala, India</span>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
