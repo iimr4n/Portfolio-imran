@@ -1,9 +1,5 @@
 {
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm --filter @workspace/portfolio run build",
-  "outputDirectory": "dist",
-  "framework": null,
-  "env": {
-    "BASE_PATH": "/"
-  }
+  "buildCommand": "bash build-vercel.sh",
+  "outputDirectory": "vercel-output",
+  "framework": null
 }
