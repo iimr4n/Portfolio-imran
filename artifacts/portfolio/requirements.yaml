@@ -1,0 +1,9 @@
+packages:
+  "framer-motion": "Required for smooth scroll animations, entrance effects, and micro-interactions"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility to efficiently merge Tailwind CSS classes"
+
+notes:
+  - This is a pure frontend portfolio, no backend API calls needed.
+  - Using Framer Motion for scroll animations and interactive states.
+  - Relying on local state/context for dark mode toggle.

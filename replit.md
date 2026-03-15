@@ -16,12 +16,22 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### `artifacts/portfolio` — Personal Portfolio Website
+- React + Vite frontend-only app served at `/`
+- Clean minimal professional portfolio for Ahammad Imran A
+- Sections: Hero, About, Skills, Education, Social Links, Contact, Footer
+- Features: dark mode toggle, smooth scroll animations, responsive design
+- Stack: React, Tailwind CSS, Framer Motion, shadcn/ui components
+
 ## Structure
 
 ```text
 artifacts-monorepo/
 ├── artifacts/              # Deployable applications
-│   └── api-server/         # Express API server
+│   ├── api-server/         # Express API server
+│   └── portfolio/          # Personal portfolio website (React + Vite, at /)
 ├── lib/                    # Shared libraries
 │   ├── api-spec/           # OpenAPI spec + Orval codegen config
 │   ├── api-client-react/   # Generated React Query hooks
