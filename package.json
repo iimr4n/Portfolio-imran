@@ -12,5 +12,15 @@
   "devDependencies": {
     "typescript": "~5.9.2",
     "prettier": "^3.8.1"
+  },
+  "pnpm": {
+    "catalogs": {
+      "default": {
+        "@replit/vite-plugin-cartographer": "^0.5.0",
+        "@replit/vite-plugin-dev-banner": "^0.1.1",
+        "@replit/vite-plugin-runtime-error-modal": "^0.0.6",
+        "@tailwindcss/vite": "^4.1.14"
+      }
+    }
   }
 }
