@@ -2,7 +2,7 @@
 set -e
 
 echo "=== Installing dependencies ==="
-pnpm install
+pnpm install --no-frozen-lockfile
 
 echo "=== Building portfolio ==="
 BASE_PATH=/ pnpm --filter @workspace/portfolio run build
@@ -29,7 +29,7 @@ else
   exit 1
 fi
 
-# Required for SPA routing (React Router / Wouter) on Cloudflare Pages
+# Required for SPA routing on Cloudflare Pages
 echo "/* /index.html 200" > "$OUTPUT_DIR/_redirects"
 
 echo "=== Build complete. Output in $OUTPUT_DIR ==="
