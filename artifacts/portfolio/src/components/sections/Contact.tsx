@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 
 export function Contact() {
   return (
@@ -23,12 +23,13 @@ export function Contact() {
 
           <div className="flex flex-col items-center gap-6">
             <a
-              href="tel:9061098676"
-              className="text-2xl font-medium text-foreground hover:underline decoration-1 underline-offset-4 transition-all"
+              href="mailto:ahammadimrana@gmail.com"
+              className="inline-flex items-center gap-3 text-2xl font-medium text-foreground hover:underline decoration-1 underline-offset-4 transition-all"
             >
-              9061098676
+              <Mail size={24} className="text-primary" />
+              ahammadimrana@gmail.com
             </a>
-            
+
             <div className="flex items-center gap-2 text-muted-foreground">
               <MapPin size={18} />
               <span>Based in Kerala, India</span>

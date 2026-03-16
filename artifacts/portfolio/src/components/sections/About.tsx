@@ -36,8 +36,8 @@ export function About() {
               <span className="text-sm text-muted-foreground mt-1">Technologies Mastered</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-3xl font-bold text-foreground">∞</span>
-              <span className="text-sm text-muted-foreground mt-1">Problems Solved</span>
+              <span className="text-3xl font-bold text-foreground">5+</span>
+              <span className="text-sm text-muted-foreground mt-1">Projects Built</span>
             </div>
           </div>
         </motion.div>

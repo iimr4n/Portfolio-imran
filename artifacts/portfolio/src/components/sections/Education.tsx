@@ -27,7 +27,7 @@ export function Education() {
           className="bg-card border border-border rounded-2xl p-8 md:p-12"
         >
           <div className="flex flex-col gap-6">
-            <span className="text-xs text-muted-foreground">2022 — Present</span>
+            <span className="text-xs text-muted-foreground">2025 — 2029</span>
             
             <div>
               <h4 className="text-2xl font-semibold text-foreground mb-2">
